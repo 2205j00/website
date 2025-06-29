@@ -18,6 +18,6 @@ jobs:
           nekoweb-api-key: fe1c692b8ecfeb6a84bfca7a16f4a2f884bea97fa6d93d795dab782b2abb7c02
           nekoweb-cookie: ${{ secrets.NEKOWEB_COOKIE }}
           nekoweb-folder: 'site'
-          directory: 'public'
+          directory: 'website'
 
 
