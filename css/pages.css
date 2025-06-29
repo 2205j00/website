@@ -1,0 +1,206 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #dedede;
+    color: black;
+    scrollbar-color: #dedede #a7a7a7;
+    scrollbar-width: thin;
+    font-family: "helvetica";
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+    font-family: sans-serif;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    padding: 0;
+}
+
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    align-self: center;
+    justify-content: center;
+    max-width: 800px;
+    /* match this to header/footer max width if needed */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.layout {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+nav {
+    color: #3a3a3a;
+    font-weight: bold;
+    position: sticky;
+    top: 10%;
+    width: 140px;
+    flex-shrink: 0;
+    border-right: 1px solid #a7a7a7;
+    padding-top: 0;
+    /* remove unnecessary padding */
+    margin-top: 0;
+}
+
+nav a {
+    /* space between links */
+    padding: 6px 16px 6px 16px;
+    font-size: 14px;
+    color: #a7a7a7;
+    display: block;
+}
+
+.entry {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.entry::before {
+    content: "";
+    margin-right: 5px;
+}
+
+.entry.selected::before {
+    content: ">";
+}
+
+main {
+    flex: 1;
+    min-width: 0;
+}
+
+.entry-content {
+    display: none;
+}
+
+.entry-content.show {
+    display: block;
+}
+
+footer {
+    position: relative;
+    font-size: 10px;
+    width: 99%;
+    height: auto;
+    margin-top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+a:link {
+    font-weight: bold;
+    color: #3a3a3a;
+}
+
+a:hover {
+    font-weight: bold;
+    color: #a7a7a7;
+}
+
+a:visited {
+    font-weight: bold;
+    color: #3a3a3a;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 15px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.show {
+    display: block;
+}
+
+::-moz-selection {
+    color: #dedede;
+    background: #a7a7a7;
+}
+
+::selection {
+    color: #dedede;
+    background: #a7a7a7;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #dedede;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a7a7a7;
+}
+
+/*---------------------*/
+
+@media screen and (max-width: 480px) {
+    /*.header {
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+  }*/
+
+    nav {
+        position: sticky;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+    }
+
+    nav:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: 1px;
+        width: 50%;
+        /* or 100px */
+        border-bottom: 1px solid #a7a7a7;
+    }
+
+    nav a {
+        float: left;
+        font-size: 14px;
+    }
+
+    main {
+        max-width: 50%;
+    }
+
+    main pre {
+        display: flex;
+        justify-content: center;
+        font-size: 11px;
+    }
+}
